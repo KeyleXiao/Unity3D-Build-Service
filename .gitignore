@@ -87,3 +87,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+Target_Build_UnityProject/ProjectA/Library
+Target_Build_UnityProject/ProjectA/Temp
