@@ -89,3 +89,6 @@ ENV/
 .ropeproject
 Target_Build_UnityProject/ProjectA/Library
 Target_Build_UnityProject/ProjectA/Temp
+Target_Build_UnityProject/ProjectA/Assembly-CSharp-Editor.csproj
+Target_Build_UnityProject/ProjectA/ProjectA.sln
+Target_Build_UnityProject/ProjectA/ProjectA.userprefs
