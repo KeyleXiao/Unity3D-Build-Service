@@ -1,5 +1,5 @@
 import os
-
+from Services.BuildServicesManager import BuildServiceManager
 # import Data.ConfigBase as config
 from Data.ConfigBase import ConfigBase
 
@@ -19,4 +19,7 @@ from Data.ConfigBase import ConfigBase
 # 	print(C.ConfigFolder)
 
 
-os.system("defaults read /Applications/Unity/Unity.app/Contents/Info DVTPlugInCompatibilityUUID")
+# os.system("defaults read /Applications/Unity/Unity.app/Contents/Info DVTPlugInCompatibilityUUID")
+
+build  = BuildServiceManager()
+build.refreshTask()

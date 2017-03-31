@@ -1,7 +1,6 @@
 import sys, os
 import json
 
-
 class ConfigBase:
 	ConfigFolder = ""
 	ConfigFullPath = ""
@@ -10,7 +9,7 @@ class ConfigBase:
 
 	def __init__(self):
 		self.setJsonFileName()
-		self.ConfigFolder = self.getCurrentConfigFolder().replace("/Dev/Data", "")  # Set Current Config Folder
+		self.ConfigFolder = self.getCurrentConfigFolder()
 		self.getFileFullPath()
 		return
 
@@ -25,12 +24,13 @@ class ConfigBase:
 			content = jsonFile.read()
 			jsonFile.close()
 			self.data = json.loads(content)
+			self.analyseData()
 			return self.data
 
 	def writeConfig(self):
 		print(self.ConfigFullPath)
 		w = open(self.ConfigFullPath,"w")
-		w.write(json.dumps(self.data))
+		w.write(json.dumps(self.data,sort_keys=True, indent=2))
 		w.close()
 		return None
 
@@ -43,7 +43,8 @@ class ConfigBase:
 
 	def getFileFullPath(self):
 		self.ConfigFullPath = os.path.join(self.ConfigFolder, self.JsonFile)
-		print("Set Json FileFull PATH : %s" % self.JsonFile)
+		self.ConfigFullPath = self.ConfigFullPath.replace("/Dev", "") # Set Current Config Folder
+		print("Set Json FileFull PATH : %s" % self.ConfigFullPath)
 
 	def analyseData(self):
 		pass
