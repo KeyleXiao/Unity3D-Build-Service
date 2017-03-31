@@ -1,6 +1,6 @@
 {
-  "/Users/keyle/Unity3D-Build-Service/Target_Build_UnityProject/ProjectA/": [
-    "EneryBuild360SDK",
-    "EneryBuildTencentSDK"
+  "/Users/keyle/Unity3D-Build-Service/Target_Build_UnityProject/ProjectA": [
+    "CommandBuild.EneryBuild360SDK",
+    "CommandBuild.EneryBuildTencentSDK"
   ]
 }

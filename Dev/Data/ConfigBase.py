@@ -44,7 +44,7 @@ class ConfigBase:
 	def getFileFullPath(self):
 		self.ConfigFullPath = os.path.join(self.ConfigFolder, self.JsonFile)
 		self.ConfigFullPath = self.ConfigFullPath.replace("/Dev", "") # Set Current Config Folder
-		print("Set Json FileFull PATH : %s" % self.ConfigFullPath)
+		# print("Set Json FileFull PATH : %s" % self.ConfigFullPath)
 
 	def analyseData(self):
 		pass

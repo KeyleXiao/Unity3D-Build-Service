@@ -1,25 +1,34 @@
-import os
-from Services.BuildServicesManager import BuildServiceManager
-# import Data.ConfigBase as config
-from Data.ConfigBase import ConfigBase
+from Entry.CommandExecute import CommandExecute
+
+# c = CommandExecute()
+# c.invoke()
 
 
-# projectPath = input("Please input project folder path :")
-#
-# print("path : %s" % projectPath )
-#
-# projectPath = "/Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -projectPath %s  -executeMethod CommandBuild.BuildAndroid"
-
-# os.system(projectPath % projectPath)
-#/Users/keyle/Unity3D-Build-Service/Target_Build_UnityProject/ProjectA/
 
 
-# if __name__ == '__main__':
-# 	C = ConfigBase()
-# 	print(C.ConfigFolder)
+if __name__ == '__main__':
 
+	c = CommandExecute()
 
-# os.system("defaults read /Applications/Unity/Unity.app/Contents/Info DVTPlugInCompatibilityUUID")
+	while c.task.getTask():
 
-build  = BuildServiceManager()
-build.refreshTask()
+		print(         "CURRENT TASK   : " + c.task.getTask()[2])
+		select = input("AutoMode       : 1\n"
+		               "Create Project : 2\n"
+		               "Build Project  : 3\n"
+		               "Finish Task    : 4\n")
+
+		if select == "1":
+			while c.invoke():
+				c.buildProject()
+
+		if select == "2":
+			c.invoke()
+
+		if select == "3":
+			pass
+
+		if select == "4":
+			c.task.finishTask()
+
+	print("COMPLETE !")
