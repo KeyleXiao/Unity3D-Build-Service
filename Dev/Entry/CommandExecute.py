@@ -7,7 +7,7 @@ class CommandExecute:
 	def __init__(self):
 		self.task = BuildServiceManager()
 
-	executeUnityCommand =  "%s -batchmode -nographics -quit  -projectPath %s  -executeMethod %s"
+	executeUnityCommand =  "%s -batchmode -nographics -quit  -projectPath %s  -executeMethod %s -projectname xiaonian"
 
 	def invoke(self):
 
@@ -22,4 +22,5 @@ class CommandExecute:
 
 
 	def buildProject(self):
+		print("Build Project...")
 		pass
