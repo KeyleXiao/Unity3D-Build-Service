@@ -1,16 +1,11 @@
 from Entry.CommandExecute import CommandExecute
 
-# c = CommandExecute()
-# c.invoke()
-
-
-
 
 if __name__ == '__main__':
 
 	c = CommandExecute()
 
-	while c.task.getTask():
+	while c.task.getTask() is not None:
 
 		print(         "CURRENT TASK   : " + c.task.getTask()[2])
 		select = input("AutoMode       : 1\n"
@@ -21,6 +16,7 @@ if __name__ == '__main__':
 		if select == "1":
 			while c.invoke():
 				c.buildProject()
+				c.task.finishTask()
 
 		if select == "2":
 			c.invoke()

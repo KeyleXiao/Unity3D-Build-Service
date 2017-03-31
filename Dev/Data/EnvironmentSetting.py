@@ -4,7 +4,8 @@ class EnvironmnetSetting(ConfigBase):
 
 	ApplicationFolder = ""
 
-	data = { "ApplicationFolder" : "" }
+
+	data = { "ApplicationFolder" : "" ,"AndroidProjectFolder" :"","XCodeProjectFolder":""}
 
 	def setJsonFileName(self):
 		self.JsonFile = "EnvironmnetConfig.json"
